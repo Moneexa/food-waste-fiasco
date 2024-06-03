@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkr71r6ifeq3d"]
+
+[ext_resource type="Script" path="res://kidsScene/groceryAnalysis.gd" id="1_5v1l6"]
+[ext_resource type="Texture2D" uid="uid://cnm8ur2sh885" path="res://thesisProjectAssets/kitchen.PNG" id="2_s7xj0"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="3_7tcll"]
+[ext_resource type="Texture2D" uid="uid://c188kgy32b0li" path="res://thesisProjectAssets/loading.PNG" id="3_tnuut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay8wa"]
+atlas = ExtResource("3_tnuut")
+region = Rect2(0, 254, 222, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g83a8"]
+atlas = ExtResource("3_tnuut")
+region = Rect2(222, 0, 222, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdvwp"]
+atlas = ExtResource("3_tnuut")
+region = Rect2(0, 0, 222, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdaa6"]
+atlas = ExtResource("3_tnuut")
+region = Rect2(222, 254, 222, 254)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_usjq8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay8wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g83a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdvwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdaa6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_5v1l6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.282353)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s7xj0")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+offset_left = 343.0
+offset_top = 13.0
+offset_right = 776.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(1, 0.843137, 0.972549, 1)
+theme_override_colors/font_shadow_color = Color(0.301961, 0.156863, 0.341176, 0.0627451)
+theme_override_fonts/font = ExtResource("3_7tcll")
+theme_override_font_sizes/font_size = 24
+text = "Let's Analyze your grocery"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(559, 297)
+sprite_frames = SubResource("SpriteFrames_usjq8")
+autoplay = "default"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 403.0
+offset_top = 72.0
+offset_right = 722.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0.996078, 0.960784, 0.968627, 1)
+theme_override_colors/font_shadow_color = Color(0.980392, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7tcll")
+theme_override_font_sizes/font_size = 25
+text = "Dishes you can prepare:
+"
+
+[node name="ItemList" type="ItemList" parent="."]
+visible = false
+offset_left = 99.0
+offset_top = 131.0
+offset_right = 1072.0
+offset_bottom = 579.0
+theme_override_fonts/font = ExtResource("3_7tcll")
+fixed_icon_size = Vector2i(150, 130)
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

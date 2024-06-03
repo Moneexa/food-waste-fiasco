@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://dco6yb6sfkrt3"]
+
+[ext_resource type="Script" path="res://kidsScene/checkout.gd" id="1_c80g2"]
+[ext_resource type="Texture2D" uid="uid://db47wfadrd1qr" path="res://thesisProjectAssets/grocerybg.PNG" id="2_hjoiu"]
+[ext_resource type="Texture2D" uid="uid://b5wivyrrjk5mf" path="res://thesisProjectAssets/coins_sprite.png" id="3_1w4p2"]
+[ext_resource type="Texture2D" uid="uid://b4oj21oh7ojw" path="res://thesisProjectAssets/letsGoCooking.PNG" id="4_i1ffx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3ktj"]
+atlas = ExtResource("3_1w4p2")
+region = Rect2(0, 0, 272, 269)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpci3"]
+atlas = ExtResource("3_1w4p2")
+region = Rect2(0, 269, 272, 269)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n6yq"]
+atlas = ExtResource("3_1w4p2")
+region = Rect2(272, 0, 272, 269)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lquxb"]
+atlas = ExtResource("3_1w4p2")
+region = Rect2(272, 269, 272, 269)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqgqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3ktj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpci3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n6yq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lquxb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_c80g2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.345098)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hjoiu")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(589, 334)
+sprite_frames = SubResource("SpriteFrames_wqgqh")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 442.0
+offset_top = 60.0
+offset_right = -445.0
+offset_bottom = -525.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.639216, 0.854902, 0.984314, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "You have spent"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 942.0
+offset_top = 541.0
+offset_right = 1130.0
+offset_bottom = 625.0
+texture_normal = ExtResource("4_i1ffx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_lets_go_cooking_pressed"]

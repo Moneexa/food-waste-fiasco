@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cthnjh16e58qn"]
+
+[ext_resource type="Script" path="res://kidsScene/quizTutorial.gd" id="1_xesbt"]
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="2_8ce5h"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="3_lc00u"]
+[ext_resource type="Texture2D" uid="uid://cmxorjccfdrlg" path="res://thesisProjectAssets/parentsAssets/backIcon.PNG" id="4_8ndh8"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_xesbt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+offset_top = -5.0
+offset_right = 1154.0
+offset_bottom = 645.0
+texture = ExtResource("2_8ce5h")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 33.0
+offset_right = 1122.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("3_lc00u")
+theme_override_font_sizes/font_size = 24
+text = "Instructions for doing the quiz"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 108.0
+offset_top = 100.0
+offset_right = 1045.0
+offset_bottom = 513.0
+theme_override_fonts/font = ExtResource("3_lc00u")
+theme_override_font_sizes/font_size = 26
+item_count = 7
+max_columns = 0
+item_0/text = "See the scenario properly by clicking the right arrow key. Once"
+item_0/selectable = false
+item_1/text = "Read the dialogues carefully and stop where the question is being asked."
+item_2/text = "Read the above options carefully and decide which one to pick"
+item_3/text = "Select the choice by clicking on button."
+item_4/text = "If option is correct then you will see your points out of 5."
+item_5/text = "You will see the energy bar and hunger bar changing when you pass half the quiz."
+item_6/text = "You need to fulfil the hunger of the hungry food spirit after attempting the quiz"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 73.0
+offset_top = 13.0
+offset_right = 141.0
+offset_bottom = 70.0
+texture_normal = ExtResource("4_8ndh8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_back_pressed"]

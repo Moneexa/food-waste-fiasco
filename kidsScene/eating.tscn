@@ -1,0 +1,197 @@
+[gd_scene load_steps=23 format=3 uid="uid://dm2xfc4yc16vc"]
+
+[ext_resource type="Texture2D" uid="uid://c15y5j7j5pfng" path="res://thesisProjectAssets/foodConsumption/diningArea.PNG" id="1_6x2bx"]
+[ext_resource type="Script" path="res://kidsScene/eating.gd" id="1_gg2uk"]
+[ext_resource type="Texture2D" uid="uid://b7i1ofts4gsms" path="res://thesisProjectAssets/foodConsumption/mainCharEating1.png" id="2_3gx2e"]
+[ext_resource type="Texture2D" uid="uid://b33lghjd2b1d7" path="res://thesisProjectAssets/Speedometer2.png" id="3_btqap"]
+[ext_resource type="Texture2D" uid="uid://ceglvgkrnxnsq" path="res://thesisProjectAssets/Speedometer1.png" id="4_emk3e"]
+[ext_resource type="Texture2D" uid="uid://djfkdgh1v2oaw" path="res://thesisProjectAssets/foodConsumption/mainCharEating.png" id="4_ja8md"]
+[ext_resource type="Texture2D" uid="uid://cvbhq0ag57ukm" path="res://thesisProjectAssets/foodConsumption/mainCharEating22.png" id="5_0wytl"]
+[ext_resource type="Texture2D" uid="uid://bfae8vk2pr0qx" path="res://thesisProjectAssets/foodConsumption/mainCharFinishEating.png" id="6_euvfc"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="8_qpidb"]
+[ext_resource type="Texture2D" uid="uid://dx88f3d2b1pqo" path="res://thesisProjectAssets/foodConsumption/startEating.PNG" id="8_xf7w6"]
+[ext_resource type="Texture2D" uid="uid://cekgdyvsohsig" path="res://thesisProjectAssets/foodConsumption/pauseEating.PNG" id="9_mhrmh"]
+[ext_resource type="Texture2D" uid="uid://cng2gf676h26o" path="res://thesisProjectAssets/foodConsumption/hungryspiritEatingFood1.png" id="10_bqcgm"]
+[ext_resource type="Texture2D" uid="uid://bgbiim4oqnbmn" path="res://thesisProjectAssets/foodConsumption/dealWithLeft.PNG" id="11_wbc0f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b50yq"]
+atlas = ExtResource("2_3gx2e")
+region = Rect2(0, 0, 829, 655)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajnp1"]
+atlas = ExtResource("4_ja8md")
+region = Rect2(0, 0, 849, 675)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8r2x"]
+atlas = ExtResource("4_ja8md")
+region = Rect2(849, 0, 849, 675)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrsuk"]
+atlas = ExtResource("4_ja8md")
+region = Rect2(0, 675, 849, 675)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04ltb"]
+atlas = ExtResource("5_0wytl")
+region = Rect2(0, 0, 849, 675)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyrgu"]
+atlas = ExtResource("5_0wytl")
+region = Rect2(849, 0, 849, 675)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qftxb"]
+atlas = ExtResource("5_0wytl")
+region = Rect2(0, 675, 849, 675)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nderb"]
+atlas = ExtResource("6_euvfc")
+region = Rect2(0, 0, 829, 655)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffe4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b50yq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajnp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8r2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrsuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04ltb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyrgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qftxb")
+}],
+"loop": true,
+"name": &"eating",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nderb")
+}],
+"loop": true,
+"name": &"finish_eating",
+"speed": 5.0
+}]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_gg2uk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.929412, 0.768627, 0.847059, 0.384314)
+offset_right = 1149.0
+offset_bottom = 660.0
+texture = ExtResource("1_6x2bx")
+stretch_mode = 6
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(562, 330)
+scale = Vector2(0.701674, 0.45792)
+sprite_frames = SubResource("SpriteFrames_ffe4b")
+animation = &"finish_eating"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 474.0
+offset_top = 8.0
+offset_right = 558.0
+offset_bottom = 71.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(16, 49)
+layout_mode = 2
+texture = ExtResource("3_btqap")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_qpidb")
+text = "Energy bar"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 620.0
+offset_top = 8.0
+offset_right = 704.0
+offset_bottom = 84.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(16, 49)
+layout_mode = 2
+texture = ExtResource("4_emk3e")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_qpidb")
+text = "Hunger bar"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 464.0
+offset_top = 513.0
+offset_right = 693.0
+offset_bottom = 610.0
+texture_normal = ExtResource("8_xf7w6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+visible = false
+offset_left = 464.0
+offset_top = 513.0
+offset_right = 693.0
+offset_bottom = 610.0
+texture_normal = ExtResource("9_mhrmh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(865, 165)
+scale = Vector2(0.898907, 0.623809)
+texture = ExtResource("10_bqcgm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 308.0
+offset_top = 122.0
+offset_right = 512.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("8_qpidb")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 42.0
+offset_top = 220.0
+offset_right = 273.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("8_qpidb")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 44.0
+offset_top = 347.0
+offset_right = 275.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("8_qpidb")
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 918.0
+offset_top = 485.0
+offset_right = 1110.0
+offset_bottom = 573.0
+texture_normal = ExtResource("11_wbc0f")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
