@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://do5ykhepk2h6m"]
+
+[ext_resource type="Script" path="res://startScrn.gd" id="1_5amnb"]
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="1_rh5si"]
+[ext_resource type="Texture2D" uid="uid://cyvweyh57q7yt" path="res://thesisProjectAssets/parentsAssets/kidButton.PNG" id="2_m6std"]
+[ext_resource type="Texture2D" uid="uid://demu7i4yd2tnf" path="res://thesisProjectAssets/parentsAssets/parentBtn.PNG" id="3_p23eo"]
+[ext_resource type="Texture2D" uid="uid://cxwsrl0n682kh" path="res://thesisProjectAssets/gmeLogo.png" id="5_dx3t4"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="5_i1gq4"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_5amnb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.384314)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rh5si")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 447.0
+offset_top = 317.0
+offset_right = 681.0
+offset_bottom = 436.0
+texture_normal = ExtResource("2_m6std")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 450.0
+offset_top = 458.0
+offset_right = 680.0
+offset_bottom = 573.0
+texture_normal = ExtResource("3_p23eo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 397.0
+offset_top = 228.0
+offset_right = 730.0
+offset_bottom = 321.0
+theme_override_colors/font_shadow_color = Color(0.854902, 0.854902, 0.854902, 1)
+theme_override_fonts/font = ExtResource("5_i1gq4")
+theme_override_font_sizes/font_size = 25
+text = "Play the game as a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 436.0
+offset_top = 19.0
+offset_right = 674.0
+offset_bottom = 183.0
+texture = ExtResource("5_dx3t4")
+expand_mode = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_kid_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_parent_pressed"]

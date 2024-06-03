@@ -1,0 +1,34 @@
+quiz_questions,quiz_answers
+overpurchasing,Knows Accurately
+expiredItems,Knows well
+overcooking,Knows Accurately
+foodStorage,Knows Accurately
+recycleFood,Knows Accurately
+
+preferred_veggies,names
+1,40g carrots
+2,6 potatoes
+3,2 corn barns
+4,36g capsicum
+
+preferred_fruits,names
+
+Score of expired dates know-how, remarks
+60%,The kid is aware of expiry
+
+Score of money spending knowledge, money spent, coins remaining,  remarks
+98.7214597073455%,7.89,609.22,The kid shops smartly
+
+Score of cooking knowledge,remarks
+100%,The kid is a masterchef
+
+Percentage of food eaten,remarks
+85%,More food could have been eaten
+
+Hunger Satisified, Remarks
+Upto 100%, Hunger fully satisified
+
+item to sort, place chosen to keep,remarks
+Seeds and pulps that cant be reused,soil,thats the right place
+leftover cooked meal,fridge,thats the right place
+Vegetables and fruit peels,kitchen,yes they should be cooked to recycle
