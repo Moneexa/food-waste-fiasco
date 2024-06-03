@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbx5pnkom60yg"]
+
+[ext_resource type="Texture2D" uid="uid://dp64nh7q32v2w" path="res://thesisProjectAssets/diamond.PNG" id="1_cb7s7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4d8q"]
+atlas = ExtResource("1_cb7s7")
+region = Rect2(0, 0, 254, 451)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ueah"]
+atlas = ExtResource("1_cb7s7")
+region = Rect2(254, 0, 254, 451)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_raomx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4d8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ueah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 127.0
+offset_top = 34.0
+offset_right = -299.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(398, 265)
+scale = Vector2(0.42126, 0.284922)
+sprite_frames = SubResource("SpriteFrames_raomx")
+autoplay = "default"
+frame = 1
+frame_progress = 0.696234

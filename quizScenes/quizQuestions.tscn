@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bicnb8fy0i0y5"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+offset_right = 500.0
+offset_bottom = 500.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "Sarah with her mom in the supermarket sees apples on sale. Excited, she convinces her mom to buy two large bags. However, after a week, half of the apples are still uneaten and starting to spoil. What could Sarah and her mom have done differently to avoid wasting food?"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.984314, 0.784314, 0.741176, 1)
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Options"

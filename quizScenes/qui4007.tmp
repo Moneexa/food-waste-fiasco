@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw32j0rftlgvi"]
+
+[ext_resource type="Script" path="res://quizScenes/quizScore.gd" id="1_7tpoq"]
+[ext_resource type="Texture2D" uid="uid://covb78jplxnnf" path="res://thesisProjectAssets/background.png" id="1_peq1k"]
+[ext_resource type="Script" path="res://quizScenes/quizRewards.gd" id="2_fa8j4"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_7tpoq")
+
+[node name="Popup" type="Popup" parent="."]
+size = Vector2i(630, 1421)
+visible = true
+script = ExtResource("2_fa8j4")
+
+[node name="TextureRect" type="TextureRect" parent="Popup"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_peq1k")
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="YourScore" type="Label" parent="Popup/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.113725, 0.188235, 0.141176, 1)
+theme_override_font_sizes/font_size = 19
+text = "Your score"
+
+[node name="Score" type="Label" parent="Popup/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.415686, 0.180392, 0.215686, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="Remarks" type="Label" parent="Popup/VBoxContainer"]
+layout_mode = 2
+
+[node name="RewardBox" type="TextureRect" parent="Popup/VBoxContainer"]
+layout_mode = 2
+
+[node name="Comments" type="Label" parent="Popup/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="focus_entered" from="Popup/VBoxContainer/RewardBox" to="Popup" method="_on_texture_rect_focus_entered"]

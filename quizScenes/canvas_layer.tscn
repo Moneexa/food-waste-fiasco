@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5vthlnq5bbea"]
+
+[ext_resource type="Script" path="res://quizScenes/quizStart.gd" id="1_wb88p"]
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="2_nnt8v"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="3_b2n4u"]
+[ext_resource type="Texture2D" uid="uid://bvxj8ii0lfhcy" path="res://thesisProjectAssets/Start_Quiz.png" id="3_y0b1k"]
+[ext_resource type="Texture2D" uid="uid://voamj88qpetg" path="res://thesisProjectAssets/checkTutorial.PNG" id="4_7vr3l"]
+
+[node name="CanvasLayer" type="Node"]
+script = ExtResource("1_wb88p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.678431)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nnt8v")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+offset_left = 329.0
+offset_top = 120.0
+offset_right = 834.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0.603922, 0.239216, 0.160784, 1)
+theme_override_colors/font_shadow_color = Color(0.290196, 0.207843, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_b2n4u")
+theme_override_font_sizes/font_size = 20
+text = "Voil! You found a  Mystical Quiz in the chest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(182, 82)
+offset_left = 457.0
+offset_top = 224.0
+offset_right = 639.0
+offset_bottom = 306.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("3_y0b1k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Button2" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(210, 79)
+offset_left = 454.0
+offset_top = 367.0
+offset_right = 664.0
+offset_bottom = 446.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("4_7vr3l")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

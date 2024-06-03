@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw32j0rftlgvi"]
+
+[ext_resource type="Script" path="res://quizScenes/quizScore.gd" id="1_qowlq"]
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="2_b1n4v"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="3_4edj1"]
+[ext_resource type="Texture2D" uid="uid://ckouixtuc7p55" path="res://thesisProjectAssets/gift-removebg-preview.png" id="3_iu5r0"]
+[ext_resource type="Texture2D" uid="uid://c8wbjotbgbif8" path="res://thesisProjectAssets/tryAgain-removebg-preview.png" id="4_kdaxd"]
+[ext_resource type="PackedScene" uid="uid://cbx5pnkom60yg" path="res://quizScenes/twinkling_diamond.tscn" id="5_6q8p7"]
+
+[node name="CanvasLayer" type="Node"]
+script = ExtResource("1_qowlq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b1n4v")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="YourScore" type="Label" parent="."]
+offset_left = 335.0
+offset_top = 45.0
+offset_right = 830.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.490196, 0.0705882, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_4edj1")
+theme_override_font_sizes/font_size = 18
+text = "Your Score"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+offset_left = 333.0
+offset_top = 88.0
+offset_right = 828.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0, 0.0862745, 0.462745, 1)
+theme_override_fonts/font = ExtResource("3_4edj1")
+theme_override_font_sizes/font_size = 45
+text = "Something"
+horizontal_alignment = 1
+
+[node name="Remarks" type="Label" parent="."]
+offset_left = 345.0
+offset_top = 177.0
+offset_right = 840.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0.956863, 0.905882, 0.964706, 1)
+theme_override_fonts/font = ExtResource("3_4edj1")
+theme_override_font_sizes/font_size = 31
+text = "Remarks"
+horizontal_alignment = 1
+
+[node name="RewardBox" type="TextureButton" parent="."]
+visible = false
+offset_left = 532.0
+offset_top = 236.0
+offset_right = 644.0
+offset_bottom = 332.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_iu5r0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Comments" type="Label" parent="."]
+visible = false
+offset_left = 337.0
+offset_top = 352.0
+offset_right = 832.0
+offset_bottom = 403.0
+theme_override_fonts/font = ExtResource("3_4edj1")
+text = "Nice"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+custom_minimum_size = Vector2(190, 121)
+offset_left = 492.0
+offset_top = 291.0
+offset_right = 682.0
+offset_bottom = 412.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_kdaxd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 494.0
+offset_top = 510.0
+offset_right = 684.0
+offset_bottom = 541.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_4edj1")
+text = "Let's Go To Next Screen"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_6q8p7")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 193.0
+offset_top = 171.0
+offset_right = 688.0
+offset_bottom = 278.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="mouse_entered" from="RewardBox" to="." method="_on_reward_box_mouse_entered"]
+[connection signal="pressed" from="RewardBox" to="." method="_on_reward_box_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

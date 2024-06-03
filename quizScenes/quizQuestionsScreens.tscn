@@ -1,0 +1,220 @@
+[gd_scene load_steps=28 format=3 uid="uid://c48fqm1x13cym"]
+
+[ext_resource type="Script" path="res://quizScenes/quizQuestionScreen.gd" id="1_ay5na"]
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="2_t2xig"]
+[ext_resource type="Texture2D" uid="uid://ceglvgkrnxnsq" path="res://thesisProjectAssets/Speedometer1.png" id="3_82fu2"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="4_fnvi8"]
+[ext_resource type="Texture2D" uid="uid://b33lghjd2b1d7" path="res://thesisProjectAssets/Speedometer2.png" id="4_qa6ei"]
+[ext_resource type="Texture2D" uid="uid://cgejo3bhsm6hw" path="res://thesisProjectAssets/quizAssets/buyingApples.PNG" id="5_np58f"]
+[ext_resource type="Script" path="res://quizScenes/QuizQuestion1Animation.gd" id="6_gil60"]
+[ext_resource type="Texture2D" uid="uid://dtroac3i8dp78" path="res://thesisProjectAssets/quizAssets/Combined grocerry.png" id="7_3l1nm"]
+[ext_resource type="Texture2D" uid="uid://bgt5gr4ndo3ss" path="res://thesisProjectAssets/quizAssets/pinic.png" id="9_edw7b"]
+[ext_resource type="Texture2D" uid="uid://bwgsgxh2nydeh" path="res://thesisProjectAssets/quizAssets/foodOverCooking.png" id="11_8o171"]
+[ext_resource type="Texture2D" uid="uid://dxphvlc5xvud6" path="res://thesisProjectAssets/quizAssets/Two frames, leftover thinking.png" id="13_7ilgh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58b3w"]
+atlas = ExtResource("5_np58f")
+region = Rect2(0, 0, 532, 531)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ou3x"]
+atlas = ExtResource("5_np58f")
+region = Rect2(532, 0, 532, 531)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am4bm"]
+atlas = ExtResource("5_np58f")
+region = Rect2(532, 531, 532, 531)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy8d8"]
+atlas = ExtResource("5_np58f")
+region = Rect2(0, 531, 532, 531)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p45lw"]
+atlas = ExtResource("7_3l1nm")
+region = Rect2(2068, 0, 1034, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igwln"]
+atlas = ExtResource("7_3l1nm")
+region = Rect2(0, 0, 1034, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tigwj"]
+atlas = ExtResource("7_3l1nm")
+region = Rect2(1034, 0, 1034, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3fit"]
+atlas = ExtResource("9_edw7b")
+region = Rect2(3624, 0, 1812, 1044)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_niel4"]
+atlas = ExtResource("9_edw7b")
+region = Rect2(0, 0, 1812, 1044)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u20j"]
+atlas = ExtResource("9_edw7b")
+region = Rect2(1812, 0, 1812, 1044)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cd27"]
+atlas = ExtResource("11_8o171")
+region = Rect2(1812, 0, 1812, 1067)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2wak"]
+atlas = ExtResource("11_8o171")
+region = Rect2(0, 0, 1812, 1067)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c20ev"]
+atlas = ExtResource("11_8o171")
+region = Rect2(0, 1067, 1812, 1067)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xsfm"]
+atlas = ExtResource("13_7ilgh")
+region = Rect2(0, 0, 873, 1017)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj4p0"]
+atlas = ExtResource("13_7ilgh")
+region = Rect2(873, 0, 873, 1017)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jo8j"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_58b3w")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_7ou3x")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_am4bm")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_sy8d8")
+}],
+"loop": false,
+"name": &"q1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_p45lw")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_igwln")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_tigwj")
+}],
+"loop": false,
+"name": &"q2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_m3fit")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_niel4")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_1u20j")
+}],
+"loop": false,
+"name": &"q3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_1cd27")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_h2wak")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_c20ev")
+}],
+"loop": false,
+"name": &"q4",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_5xsfm")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_kj4p0")
+}],
+"loop": false,
+"name": &"q5",
+"speed": 1.0
+}]
+
+[node name="CanvasLayer" type="Node"]
+script = ExtResource("1_ay5na")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.431373, 0.431373, 0.431373, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t2xig")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 174.0
+offset_right = 1002.0
+offset_bottom = 58.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(34, 30)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_82fu2")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fnvi8")
+text = "Energy"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_qa6ei")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fnvi8")
+text = "Hunger"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -402.0
+offset_top = 92.0
+offset_right = 426.0
+offset_bottom = 599.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_fnvi8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer"]
+position = Vector2(402, 306)
+scale = Vector2(0.586093, 0.454023)
+sprite_frames = SubResource("SpriteFrames_4jo8j")
+animation = &"q1"
+script = ExtResource("6_gil60")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fnvi8")
