@@ -1,11 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw32j0rftlgvi"]
+[gd_scene load_steps=10 format=3 uid="uid://cw32j0rftlgvi"]
 
 [ext_resource type="Script" path="res://quizScenes/quizScore.gd" id="1_qowlq"]
 [ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="2_b1n4v"]
 [ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="3_4edj1"]
 [ext_resource type="Texture2D" uid="uid://ckouixtuc7p55" path="res://thesisProjectAssets/gift-removebg-preview.png" id="3_iu5r0"]
 [ext_resource type="Texture2D" uid="uid://c8wbjotbgbif8" path="res://thesisProjectAssets/tryAgain-removebg-preview.png" id="4_kdaxd"]
-[ext_resource type="PackedScene" uid="uid://cbx5pnkom60yg" path="res://quizScenes/twinkling_diamond.tscn" id="5_6q8p7"]
+[ext_resource type="Texture2D" uid="uid://dp64nh7q32v2w" path="res://thesisProjectAssets/diamond.PNG" id="6_q2gm8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcib1"]
+atlas = ExtResource("6_q2gm8")
+region = Rect2(0, 0, 254, 451)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgmdg"]
+atlas = ExtResource("6_q2gm8")
+region = Rect2(254, 0, 254, 451)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3usw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcib1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgmdg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CanvasLayer" type="Node"]
 script = ExtResource("1_qowlq")
@@ -57,7 +79,6 @@ text = "Remarks"
 horizontal_alignment = 1
 
 [node name="RewardBox" type="TextureButton" parent="."]
-visible = false
 offset_left = 532.0
 offset_top = 236.0
 offset_right = 644.0
@@ -101,17 +122,12 @@ size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("3_4edj1")
 text = "Let's Go To Next Screen"
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_6q8p7")]
+[node name="CharacterBody2D" type="AnimatedSprite2D" parent="."]
 visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 193.0
-offset_top = 171.0
-offset_right = 688.0
-offset_bottom = 278.0
-grow_horizontal = 1
-grow_vertical = 1
+position = Vector2(580, 426)
+scale = Vector2(0.370079, 0.315965)
+sprite_frames = SubResource("SpriteFrames_f3usw")
+autoplay = "default"
 
 [connection signal="mouse_entered" from="RewardBox" to="." method="_on_reward_box_mouse_entered"]
 [connection signal="pressed" from="RewardBox" to="." method="_on_reward_box_pressed"]
