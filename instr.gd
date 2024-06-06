@@ -1,10 +1,19 @@
 extends Node
+@onready var texture_button = $TextureButton
+@onready var texture_button_2 = $TextureButton2
 
-
+var lang=LanguageScrnState.lang
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	if lang=="en":
+		texture_button.texture_normal=load("res://thesisProjectAssets/startButton.PNG")
+		texture_button_2.texture_normal=load("res://thesisProjectAssets/instrc.PNG")
+	elif lang=="es":
+		texture_button.texture_normal=load("res://thesisProjectAssets/startButton_es.PNG")			
+		texture_button_2.texture_normal=load("res://thesisProjectAssets/instrc_es.PNG")
+	elif lang=="dk":
+		texture_button.texture_normal=load("res://thesisProjectAssets/startButton.PNG")			
+		texture_button_2.texture_normal=load("res://thesisProjectAssets/instrc_dk.png")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

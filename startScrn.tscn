@@ -46,7 +46,6 @@ offset_bottom = 321.0
 theme_override_colors/font_shadow_color = Color(0.854902, 0.854902, 0.854902, 1)
 theme_override_fonts/font = ExtResource("5_i1gq4")
 theme_override_font_sizes/font_size = 25
-text = "Play the game as a"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -26,6 +26,7 @@ CartPrice="*res://kidsScene/cartPrice.gd"
 CookingState="*res://kidsScene/cookingState.gd"
 LeftOversLocalStates="*res://kidsScene/leftOversLocalStates.gd"
 EatingStates="*res://kidsScene/eatingStates.gd"
+LanguageScrnState="*res://languageScrnState.gd"
 
 [display]
 
