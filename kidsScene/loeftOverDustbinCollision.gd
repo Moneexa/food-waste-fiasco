@@ -19,11 +19,17 @@ func _on_area_2d_body_entered(body):
 		LeftOversLocalStates.destinationReached="dustbin"
 		decision_obj={"source":LeftOversLocalStates.source_selected, "destination":LeftOversLocalStates.destinationReached}
 		entered=true
-
+var lang=LanguageScrnState.lang
 func _on_pressed_dustbin():
 	if entered:
 		self.visible=false
 		label.visible=false
-		LeftOversLocalStates.decision_list.append(decision_obj)				
-		appreciation.text="Piénselo de nuevo, nada debe tirarse a la basura."
+		LeftOversLocalStates.decision_list.append(decision_obj)
+		if lang=="en":
+			appreciation.text="Think again, nothing should be thrown away."
+		elif lang=="es":
+			appreciation.text="Piénselo de nuevo, no se debe tirar nada."			
+		elif lang=="dk":
+			appreciation.text="Tænk igen, intet skal smides ud."			
+
 		HungerQuestState.coins-=25

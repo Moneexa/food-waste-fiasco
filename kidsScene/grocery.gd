@@ -7,12 +7,13 @@ var showFruits=false;
 @onready var veggie_container = $VeggieContainer
 
 @onready var fruits = $FruitContainer
+@onready var label = $Label
 
 @onready var left = $TextureRect2
 @onready var right = $TextureRect3
 @onready var main_menu = $HBoxContainer
 @onready var add_cart_button = $TextureButton
-
+var lang=LanguageScrnState.lang
 func fill_container():
 	var groceryItems=Grocery.groceryItems;
 	for item in groceryItems:
@@ -54,6 +55,15 @@ func fill_container():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if lang=="en":
+		label.text="Choose Items to Shop"
+		add_cart_button.texture_normal=load("res://thesisProjectAssets/groceryItems/addToCart.PNG")
+	elif lang=="es":
+			label.text="Elija artículos para comprar"
+			add_cart_button.texture_normal=load("res://thesisProjectAssets/groceryItems/addToCart-es.png")
+	elif lang=="dk":
+		label.text="Vælg varer, du vil købe"
+		add_cart_button.texture_normal=load("res://thesisProjectAssets/groceryItems/addToCart-dk.png")
 	fill_container()
 	
 

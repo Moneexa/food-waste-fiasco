@@ -192,6 +192,13 @@ texture_normal = ExtResource("11_wbc0f")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 554.0
+offset_top = 321.0
+offset_right = 599.0
+offset_bottom = 356.0
+expand_mode = 1
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

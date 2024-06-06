@@ -4,8 +4,14 @@ extends Node
 @onready var character_body_2d = $CharacterBody2D
 @onready var wieght = $Label3
 @onready var cost = $Label4
+@onready var heading = $Label
+@onready var pay_button = $TextureButton2
+@onready var remove_button = $TextureButton3
+@onready var shop_items = $TextureButton
+
 var weight_cart=0
 var price=0
+var lang=LanguageScrnState.lang
 @onready var weight_notification = $TextureRect3
 var selectedItemsToBeRemoved=[]
 # Called when the node enters the scene tree for the first time.
@@ -47,6 +53,13 @@ func update_grid():
 		if item!={}:
 			if is_expiry_date_passed(item.expiry_date):
 				texture_rect_2.visible=true
+				if lang=="en":
+					texture_rect_2.texture=load("res://thesisProjectAssets/parentsAssets/notificationCloud.PNG")
+				elif lang=="es":
+					texture_rect_2.texture=load("res://thesisProjectAssets/parentsAssets/notificationCloud-es.PNG")
+				elif lang=="dk":
+					texture_rect_2.texture=load("res://thesisProjectAssets/parentsAssets/notificationCloud-dk.PNG")
+
 			var smallCarrotBtn=TextureButton.new()
 			smallCarrotBtn.texture_normal=load(item.path)
 			var selectedPath=item.path;
@@ -73,22 +86,56 @@ func update_grid():
 			grid_container.add_child(vBoxCont)
 			weight_cart+=item.weight
 			price+=item.price
-	print("************* the grocery list **************", Grocery.groceryList)		
+	print("************* the grocery list **************", Grocery.groceryList)	
+	var totalWeightString=""
+	var totalPriceString=""
+	if lang=="en":
+		totalWeightString="Total Weight: "
+		totalPriceString="Total Price: "		
+	elif lang=="es":
+		totalWeightString="Peso total: "
+		totalPriceString="Precio total: "
+	elif lang=="dk":
+		totalWeightString="Totalvægt: "
+		totalPriceString="Total pris: "
+
 	if weight_cart>=1000:
-		wieght.text="Peso total: "+str(weight_cart/1000.0)+"kg";
+		wieght.text=totalWeightString+str(weight_cart/1000.0)+"kg";
 	else:
-		wieght.text="Peso total: "+str(weight_cart)+"grams";
+		wieght.text=totalWeightString+str(weight_cart)+"grams";
 
 	if weight_cart>1000:
 		weight_notification.visible=true
 		texture_rect_3.visible=true
+		if lang=="en":
+			texture_rect_3.texture=load("res://thesisProjectAssets/itemWeightNotification.PNG")
+		elif lang=="es":
+			texture_rect_3.texture=load("res://thesisProjectAssets/itemWeightNotification-es.PNG")
+		elif lang=="dk":
+			texture_rect_3.texture=load("res://thesisProjectAssets/itemWeightNotification-dk.PNG")
+
 		texture_button.visible=true
-	cost.text="Precio total:"+" $"+str(price)
+	cost.text=totalPriceString+" $"+str(price)
 	CartPrice.price=price
 
 	
 func _ready():
-		update_grid()
+	if lang=="en":
+		heading.text="Here is what you added in the cart"
+		pay_button.texture_normal=load("res://thesisProjectAssets/checkout.PNG")
+		remove_button.texture_normal=load("res://thesisProjectAssets/removeFromCart.PNG")
+		shop_items.texture_normal=load("res://thesisProjectAssets/shopItems.PNG")
+	elif lang=="es":
+		heading.text="Esto es lo que agregaste en el carrito."	
+		pay_button.texture_normal=load("res://thesisProjectAssets/checkout-es.PNG")
+		remove_button.texture_normal=load("res://thesisProjectAssets/removeFromCart-es.PNG")
+		shop_items.texture_normal=load("res://thesisProjectAssets/shopItems-es.PNG")
+	elif lang=="dk":
+		heading.text="Dette er, hvad du har lagt til indkøbskurven."
+		pay_button.texture_normal=load("res://thesisProjectAssets/checkout-dk.PNG")
+		remove_button.texture_normal=load("res://thesisProjectAssets/removeFromCart-dk.PNG")
+		shop_items.texture_normal=load("res://thesisProjectAssets/shopItems-dk.PNG")
+	update_grid()
 func _on_each_btn_pressed(item):
 		if item in selectedItemsToBeRemoved:
 			selectedItemsToBeRemoved.erase(item)
@@ -99,12 +146,12 @@ func _process(delta):
 	pass
 
 func _on_checkout_pressed():
-	var checkoutScene =preload("res://spanishScenes/kidsScene/checkout.tscn")
+	var checkoutScene =preload("res://kidsScene/checkout.tscn")
 	get_tree().change_scene_to_packed(checkoutScene)
 
 
 func _on_shop_again_pressed():	
-	var checkoutScene =preload("res://spanishScenes/kidsScene/grocery.tscn")
+	var checkoutScene =preload("res://kidsScene/grocery.tscn")
 	get_tree().change_scene_to_packed(checkoutScene)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cqbq5nfnfk8vu"]
+[gd_scene load_steps=42 format=3 uid="uid://cqbq5nfnfk8vu"]
 
 [ext_resource type="Script" path="res://kidsScene/cooking.gd" id="1_4ifc8"]
 [ext_resource type="Texture2D" uid="uid://cnm8ur2sh885" path="res://thesisProjectAssets/kitchen.PNG" id="2_cufrj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d4fqo6cspvblb" path="res://thesisProjectAssets/dishesToPrep/notePopping.PNG" id="8_wt75y"]
 [ext_resource type="Texture2D" uid="uid://cf0r7u8k1qp8v" path="res://thesisProjectAssets/dishesToPrep/mainCharGrinding.png" id="9_diu5b"]
 [ext_resource type="Texture2D" uid="uid://dw5k0bnom7lei" path="res://thesisProjectAssets/dishesToPrep/endCooking.PNG" id="11_coaj5"]
+[ext_resource type="Texture2D" uid="uid://bw8h0f0yh46qa" path="res://thesisProjectAssets/dishesToPrep/mainCharServing.png" id="13_kfftd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eatx4"]
 atlas = ExtResource("3_5iyl5")
@@ -221,6 +222,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxy6f"]
+atlas = ExtResource("13_kfftd")
+region = Rect2(0, 0, 829, 655)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5htnj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxy6f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node" type="Node"]
 script = ExtResource("1_4ifc8")
 
@@ -236,10 +252,10 @@ expand_mode = 2
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="."]
-offset_left = 75.0
-offset_top = 27.0
-offset_right = 404.0
-offset_bottom = 82.0
+offset_left = 24.0
+offset_top = 73.0
+offset_right = 353.0
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(0.180392, 0.0431373, 0.184314, 1)
 theme_override_colors/font_shadow_color = Color(0.254902, 0.227451, 0.0705882, 0.945098)
 theme_override_colors/font_outline_color = Color(0.266667, 0, 0.00392157, 1)
@@ -249,6 +265,14 @@ text = "Let's Cook"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="Label"]
+layout_mode = 0
+offset_left = 241.0
+offset_top = -12.0
+offset_right = 332.0
+offset_bottom = 71.0
+expand_mode = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 8.0
 offset_top = 240.0
@@ -256,10 +280,10 @@ offset_right = 377.0
 offset_bottom = 613.0
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 279.0
-offset_top = 80.0
-offset_right = 805.0
-offset_bottom = 113.0
+offset_left = 328.0
+offset_top = 138.0
+offset_right = 854.0
+offset_bottom = 171.0
 theme_override_colors/font_color = Color(0.384314, 0.0196078, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.0588235, 0.227451, 0.290196, 0.898039)
 theme_override_colors/font_outline_color = Color(1, 0.545098, 0.619608, 1)
@@ -302,7 +326,7 @@ frame_progress = 0.30884
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(725, 563)
+position = Vector2(575, 557)
 scale = Vector2(0.526113, 0.438784)
 sprite_frames = SubResource("SpriteFrames_eea17")
 autoplay = "default"
@@ -349,7 +373,7 @@ expand_mode = 1
 [node name="Label" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.929412, 0.929412, 0.929412, 1)
-theme_override_colors/font_shadow_color = Color(0.819608, 0.819608, 0.819608, 1)
+theme_override_colors/font_shadow_color = Color(0.819608, 0.819608, 0.819608, 0.290196)
 theme_override_fonts/font = ExtResource("3_4fygd")
 text = "500 coins"
 
@@ -361,5 +385,19 @@ offset_bottom = 295.0
 texture_normal = ExtResource("11_coaj5")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(545, 563)
+scale = Vector2(0.389023, 0.370229)
+sprite_frames = SubResource("SpriteFrames_5htnj")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+offset_left = 484.0
+offset_top = 513.0
+offset_right = 561.0
+offset_bottom = 587.0
+expand_mode = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_end_coooking_pressed"]

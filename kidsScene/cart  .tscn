@@ -23,10 +23,10 @@ texture = ExtResource("2_k3jmi")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 124.0
-offset_top = 61.0
-offset_right = 576.0
-offset_bottom = 142.0
+offset_left = 328.0
+offset_top = 30.0
+offset_right = 780.0
+offset_bottom = 111.0
 theme_override_colors/font_color = Color(0.521569, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.439216, 0, 0.552941, 1)
 theme_override_fonts/font = ExtResource("3_q47tn")

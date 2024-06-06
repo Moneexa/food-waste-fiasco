@@ -527,6 +527,14 @@ texture_focused = ExtResource("5_ctuhe")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -8.0
+offset_right = 104.0
+offset_bottom = 64.0
+expand_mode = 1
+
 [node name="TextureRect4" type="TextureButton" parent="."]
 offset_left = 38.0
 offset_top = 349.0

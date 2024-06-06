@@ -13,6 +13,7 @@ var recipes = {
 	"Carrot Pudding": ["carrots"]
 }
 
+@onready var heading = $Label
 
 # Called when the node enters the scene tree for the first time.
 var possible_dishes = []
@@ -46,8 +47,15 @@ func populate_sugg():
 	#food_suuggestions.add_item("Baked Potatoes", load("res://thesisProjectAssets/bakedPot.PNG"),true);
 	#food_suuggestions.add_item("Vegetable Soup", load("res://thesisProjectAssets/soup.PNG"),true);
 	#food_suuggestions.add_item("Carrot Pudding",load("res://thesisProjectAssets/pudding.PNG"),true);
-
+var lang=LanguageScrnState.lang
 func _ready():
+	if lang=="en":
+		heading.text="Lets Analyze your Grocery"
+	elif lang=="es":
+		heading.text="Analicemos su compra"			
+	elif lang=="dk":
+		heading.text="Lad os analysere din købmand"			
+
 	populate_sugg()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,7 +66,7 @@ func _on_item_clicked(index, at_position, mouse_pos):
 	var dish = food_suuggestions.get_item_text(index)
 	CookingState.chosenDish=dish
 	print("************** chosen dsh *************", CookingState.chosenDish)
-	var cookingScrn=load("res://spanishScenes/kidsScene/cooking.tscn")
+	var cookingScrn=load("res://kidsScene/cooking.tscn")
 	get_tree().change_scene_to_packed(cookingScrn)
 	
 func _on_animated_sprite_2d_frame_changed():

@@ -6,6 +6,7 @@ extends TextureButton
 
 var decision_obj={}
 var entered=false
+var lang=LanguageScrnState.lang
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -29,7 +30,17 @@ func _on_kitchen_pressed():
 		self.visible=false
 		label.visible=false
 		if LeftOversLocalStates.source_selected=="2":
-			appreciation.text="¡Hurra! Es correcto"
+			if lang=="en":
+				appreciation.text="Hurrah! It's right"
+			elif lang=="es":
+				appreciation.text="¡Hurra! Está bien"
+			elif lang=="dk":
+				appreciation.text="Hurra! Det er rigtigt"
 			HungerQuestState.coins+=25
 		else:
-			appreciation.text="Por favor piensa de nuevo"
+			if lang=="en":
+				appreciation.text="Please think again"
+			elif lang=="es":
+				appreciation.text="Por favor piensa de nuevo"
+			elif lang=="dk":    
+				appreciation.text="Tænk venligst om igen"
