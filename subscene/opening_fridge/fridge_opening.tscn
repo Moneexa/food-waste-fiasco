@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4lnti0ky5pxl"]
+
+[ext_resource type="Texture2D" uid="uid://ccqfucetpekoy" path="res://thesisProjectAssets/fridge-opening-sprite.png" id="1_2rqfr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hykwp"]
+atlas = ExtResource("1_2rqfr")
+region = Rect2(0, 0, 34, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wunv"]
+atlas = ExtResource("1_2rqfr")
+region = Rect2(34, 0, 34, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxdvq"]
+atlas = ExtResource("1_2rqfr")
+region = Rect2(68, 0, 34, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_612m0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hykwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wunv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxdvq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D2" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_612m0")
+frame_progress = 0.782254
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

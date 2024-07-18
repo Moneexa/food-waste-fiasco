@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://isblq233vcyb"]
+
+[ext_resource type="Script" path="res://subscene/opening_fridge/fridgeScript.gd" id="1_0rmqv"]
+[ext_resource type="Texture2D" uid="uid://ckgvckrufnlbr" path="res://thesisProjectAssets/Fridge.png" id="1_2dmma"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32a2y"]
+atlas = ExtResource("1_2dmma")
+region = Rect2(926, 0, 460, 753)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxfn3"]
+atlas = ExtResource("1_2dmma")
+region = Rect2(463, 0, 460, 753)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyade"]
+atlas = ExtResource("1_2dmma")
+region = Rect2(3, 0, 460, 753)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gsqqe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32a2y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxfn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyade")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jwxf"]
+size = Vector2(148, 228.25)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_0rmqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(836, 476.125)
+scale = Vector2(0.321739, 0.319057)
+sprite_frames = SubResource("SpriteFrames_gsqqe")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(846, 477.125)
+shape = SubResource("RectangleShape2D_3jwxf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
