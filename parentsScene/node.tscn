@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://csiwg5wdftr4j"]
+
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="1_aa53f"]
+[ext_resource type="Script" path="res://prentsScene/startScreenScript.gd" id="1_vg4iw"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="3_mpxnh"]
+
+[sub_resource type="Theme" id="Theme_2oc4c"]
+default_font = ExtResource("3_mpxnh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqoo4"]
+bg_color = Color(0.290196, 0.501961, 0.564706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_laed2"]
+bg_color = Color(0.584314, 0.690196, 0.870588, 0.929412)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="ParentScreen1" type="Node"]
+script = ExtResource("1_vg4iw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.6)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aa53f")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 437.0
+offset_top = 100.0
+offset_right = 657.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0.105882, 0.529412, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.156863, 0.517647, 1)
+theme_override_colors/font_outline_color = Color(0.847059, 0.8, 0.898039, 1)
+theme_override_constants/outline_size = 28
+theme_override_fonts/font = ExtResource("3_mpxnh")
+theme_override_font_sizes/font_size = 25
+text = "Write Your Parent PIN"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 427.0
+offset_top = 182.0
+offset_right = 675.0
+offset_bottom = 351.0
+
+[node name="LineEdit" type="TextEdit" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 247.0
+offset_bottom = 39.0
+theme = SubResource("Theme_2oc4c")
+theme_override_colors/font_color = Color(1, 0.8, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_mpxnh")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqoo4")
+text_direction = 1
+
+[node name="Button" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 68.0
+offset_top = 94.0
+offset_right = 174.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0.67451, 0, 0.0352941, 1)
+theme_override_colors/font_outline_color = Color(0.788235, 0.752941, 0.921569, 0.462745)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("3_mpxnh")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_laed2")
+text = "Submit"
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = 141.0
+offset_right = 226.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0.780392, 0, 0, 0.780392)
+theme_override_colors/font_shadow_color = Color(0.772549, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mpxnh")
+text = "Incorrect pin"
+horizontal_alignment = 1
+
+[connection signal="text_changed" from="Control/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

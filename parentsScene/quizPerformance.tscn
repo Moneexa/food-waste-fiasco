@@ -1,0 +1,256 @@
+[gd_scene load_steps=8 format=3 uid="uid://hn15r1mf6odt"]
+
+[ext_resource type="Script" path="res://prentsScene/quizPerformance.gd" id="1_oov0h"]
+[ext_resource type="Texture2D" uid="uid://ks60ajfxwxxh" path="res://thesisProjectAssets/parentsAssets/blackChart.PNG" id="2_v2hv2"]
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="2_ywy2s"]
+[ext_resource type="Texture2D" uid="uid://cvoajpqoyooyw" path="res://thesisProjectAssets/parentsAssets/greenChart.PNG" id="3_wjdpy"]
+[ext_resource type="Texture2D" uid="uid://cmxorjccfdrlg" path="res://thesisProjectAssets/parentsAssets/backIcon.PNG" id="5_c224g"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="5_tcwcc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ry0xo"]
+
+[node name="Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_oov0h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.352941)
+custom_minimum_size = Vector2(97, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1146.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ywy2s")
+expand_mode = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 248.0
+offset_top = 143.0
+offset_right = 307.0
+offset_bottom = 308.0
+fill_mode = 3
+texture_under = ExtResource("2_v2hv2")
+texture_progress = ExtResource("3_wjdpy")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 144.0
+offset_right = 599.0
+offset_bottom = 309.0
+fill_mode = 3
+texture_under = ExtResource("2_v2hv2")
+texture_progress = ExtResource("3_wjdpy")
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 139.0
+offset_right = 885.0
+offset_bottom = 304.0
+fill_mode = 3
+texture_under = ExtResource("2_v2hv2")
+texture_progress = ExtResource("3_wjdpy")
+
+[node name="TextureProgressBar4" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 377.0
+offset_right = 472.0
+offset_bottom = 542.0
+fill_mode = 3
+texture_under = ExtResource("2_v2hv2")
+texture_progress = ExtResource("3_wjdpy")
+
+[node name="TextureProgressBar5" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 374.0
+offset_right = 758.0
+offset_bottom = 539.0
+fill_mode = 3
+texture_under = ExtResource("2_v2hv2")
+texture_progress = ExtResource("3_wjdpy")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 181.0
+offset_top = 302.0
+offset_right = 413.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.937255, 0.815686, 0.807843, 1)
+theme_override_colors/font_shadow_color = Color(0.141176, 0.109804, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0.415686, 0.219608, 0.282353, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Control on blatant purchasing"
+horizontal_alignment = 1
+
+[node name="Remarks" type="Label" parent="Label"]
+material = SubResource("CanvasItemMaterial_ry0xo")
+layout_mode = 0
+offset_left = 143.0
+offset_top = -150.0
+offset_right = 183.0
+offset_bottom = -127.0
+theme_override_colors/font_color = Color(0.215686, 0.105882, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.52549, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.929412, 0.831373, 0.870588, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Remarks
+"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 452.0
+offset_top = 307.0
+offset_right = 684.0
+offset_bottom = 330.0
+theme_override_colors/font_color = Color(0.929412, 0.890196, 0.956863, 1)
+theme_override_colors/font_shadow_color = Color(0.388235, 0, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(0.529412, 0.117647, 0.141176, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Know-how of expired items"
+horizontal_alignment = 1
+
+[node name="Remarks" type="Label" parent="Label2"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = -150.0
+offset_right = 230.0
+offset_bottom = -127.0
+theme_override_colors/font_color = Color(0.235294, 0, 0.384314, 1)
+theme_override_colors/font_shadow_color = Color(0.352941, 0.141176, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(0.94902, 0.905882, 0.929412, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Remarks
+"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 748.0
+offset_top = 306.0
+offset_right = 980.0
+offset_bottom = 329.0
+theme_override_colors/font_color = Color(1, 0.909804, 0.92549, 1)
+theme_override_colors/font_shadow_color = Color(0.458824, 0.121569, 0.27451, 1)
+theme_override_colors/font_outline_color = Color(0.584314, 0.168627, 0.294118, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Awareness of over cooking"
+horizontal_alignment = 1
+
+[node name="Remarks" type="Label" parent="Label3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 143.0
+offset_top = -150.0
+offset_right = 183.0
+offset_bottom = -127.0
+theme_override_colors/font_color = Color(0.768627, 0, 0.282353, 1)
+theme_override_colors/font_shadow_color = Color(0.25098, 0, 0.431373, 1)
+theme_override_colors/font_outline_color = Color(0.890196, 0.890196, 0.890196, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Remarks
+"
+
+[node name="Label4" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 301.0
+offset_top = 537.0
+offset_right = 565.0
+offset_bottom = 560.0
+theme_override_colors/font_color = Color(1, 0.835294, 0.807843, 1)
+theme_override_colors/font_shadow_color = Color(0.678431, 0.486275, 0.513726, 1)
+theme_override_colors/font_outline_color = Color(0.388235, 0.192157, 0.27451, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Knowledge of proper food storage"
+horizontal_alignment = 1
+
+[node name="Remarks" type="Label" parent="Label4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 167.0
+offset_top = -150.0
+offset_right = 235.0
+offset_bottom = -127.0
+theme_override_colors/font_color = Color(0.333333, 0.0117647, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.313726, 0.0627451, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(1, 0.866667, 0.952941, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Remarks
+"
+
+[node name="Label5" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 626.0
+offset_top = 535.0
+offset_right = 890.0
+offset_bottom = 558.0
+theme_override_colors/font_color = Color(0.988235, 0.866667, 0.890196, 1)
+theme_override_colors/font_shadow_color = Color(0.329412, 0, 0.00392157, 1)
+theme_override_colors/font_outline_color = Color(0.4, 0, 0.219608, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Know-how of Food reusability"
+horizontal_alignment = 1
+
+[node name="Remarks" type="Label" parent="Label5"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 143.0
+offset_top = -150.0
+offset_right = 183.0
+offset_bottom = -127.0
+theme_override_colors/font_color = Color(0.552941, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.337255, 0, 0.368627, 1)
+theme_override_colors/font_outline_color = Color(0.866667, 0.866667, 0.866667, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_tcwcc")
+text = "Remarks
+"
+
+[node name="Label6" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 355.0
+offset_top = 32.0
+offset_right = 670.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.352941, 0, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.733333, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0.94902, 0.87451, 0.952941, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_tcwcc")
+theme_override_font_sizes/font_size = 24
+text = "Overall Analysis of your child atttidue towards Food"
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 27.0
+offset_right = 136.0
+offset_bottom = 103.0
+texture_normal = ExtResource("5_c224g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

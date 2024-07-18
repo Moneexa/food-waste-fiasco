@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://tov6otm87646"]
+
+[ext_resource type="Script" path="res://prentsScene/cookingPerformance.gd" id="1_sxvsj"]
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="2_ra10a"]
+[ext_resource type="Texture2D" uid="uid://bc8ne7o5a3cql" path="res://thesisProjectAssets/parentsAssets/donut grey.png" id="3_flkup"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="3_j2p6k"]
+[ext_resource type="Texture2D" uid="uid://cdcebtm3jab6u" path="res://thesisProjectAssets/parentsAssets/donut orange.png" id="4_kclyu"]
+[ext_resource type="Texture2D" uid="uid://cmxorjccfdrlg" path="res://thesisProjectAssets/parentsAssets/backIcon.PNG" id="5_fbija"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_wxpjt"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_sxvsj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ra10a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 372.0
+offset_top = 31.0
+offset_right = 748.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0.564706, 0.117647, 0.576471, 1)
+theme_override_colors/font_shadow_color = Color(0.137255, 0.0862745, 0.278431, 1)
+theme_override_colors/font_outline_color = Color(1, 0.87451, 0.85098, 1)
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("3_j2p6k")
+theme_override_font_sizes/font_size = 28
+text = "Analysis of your Kid's Meal Prepared"
+horizontal_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 69)
+offset_left = 429.0
+offset_top = 101.0
+offset_right = 679.0
+offset_bottom = 351.0
+fill_mode = 4
+stretch_margin_left = 41
+stretch_margin_top = 38
+stretch_margin_right = 5
+stretch_margin_bottom = 18
+texture_under = ExtResource("3_flkup")
+texture_progress = ExtResource("4_kclyu")
+
+[node name="Label" type="Label" parent="TextureProgressBar"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 261.0
+offset_top = 59.0
+offset_right = 409.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.552941, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.313726, 0, 0.298039, 1)
+theme_override_colors/font_outline_color = Color(1, 0.858824, 0.835294, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_j2p6k")
+
+[node name="Title1" type="Label" parent="."]
+offset_left = 444.0
+offset_top = 363.0
+offset_right = 672.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(0.415686, 0, 0.501961, 1)
+theme_override_colors/font_shadow_color = Color(0.576471, 0, 0.623529, 1)
+theme_override_colors/font_outline_color = Color(1, 0.858824, 0.835294, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("3_j2p6k")
+theme_override_font_sizes/font_size = 21
+text = "Know how of cooking sequence"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 126.0
+offset_top = 410.0
+offset_right = 360.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(0.313726, 0.101961, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0.360784, 0.0235294, 0.294118, 1)
+theme_override_colors/font_outline_color = Color(1, 0.815686, 0.788235, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("3_j2p6k")
+theme_override_font_sizes/font_size = 25
+text = "Preferred Meal"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 399.0
+offset_top = 416.0
+offset_right = 697.0
+offset_bottom = 622.0
+texture = SubResource("ImageTexture_wxpjt")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 100.0
+offset_top = 47.0
+offset_right = 191.0
+offset_bottom = 117.0
+texture_normal = ExtResource("5_fbija")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_back_pressed"]

@@ -1,0 +1,166 @@
+[gd_scene load_steps=12 format=3 uid="uid://clh4mef7nolbf"]
+
+[ext_resource type="Script" path="res://prentsScene/menuScene.gd" id="1_pbf30"]
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="1_ulltt"]
+[ext_resource type="Texture2D" uid="uid://dmsw6l6du51f4" path="res://thesisProjectAssets/parentsAssets/quiz.PNG" id="2_rwc8q"]
+[ext_resource type="Texture2D" uid="uid://ctbjm8onsp6am" path="res://thesisProjectAssets/parentsAssets/kidGrocery.PNG" id="3_2joxv"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="3_vlxne"]
+[ext_resource type="Texture2D" uid="uid://oq5n7450kx5x" path="res://thesisProjectAssets/parentsAssets/mealsPrepared.PNG" id="4_rooax"]
+[ext_resource type="Texture2D" uid="uid://cqucxti0o55yt" path="res://thesisProjectAssets/parentsAssets/leftovers.PNG" id="5_hbncq"]
+[ext_resource type="Texture2D" uid="uid://ben7fnhdr0d0m" path="res://thesisProjectAssets/parentsAssets/foodConsumption.PNG" id="6_gssk6"]
+[ext_resource type="Texture2D" uid="uid://cmxorjccfdrlg" path="res://thesisProjectAssets/parentsAssets/backIcon.PNG" id="9_86v25"]
+[ext_resource type="Texture2D" uid="uid://c8voqx4m0xh0s" path="res://thesisProjectAssets/parentsAssets/exportBtn.PNG" id="10_hl8tl"]
+[ext_resource type="Texture2D" uid="uid://dmybg8fv4dnq4" path="res://thesisProjectAssets/parentsAssets/quicktips.PNG" id="11_e132t"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_pbf30")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ulltt")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 42.0
+offset_right = 794.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(0.8, 0.054902, 0.396078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vlxne")
+theme_override_font_sizes/font_size = 34
+text = "Your Kid's Performance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(130, 151)
+offset_left = 336.0
+offset_top = 140.0
+offset_right = 466.0
+offset_bottom = 304.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_rwc8q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(147, 151)
+offset_left = 474.0
+offset_top = 140.0
+offset_right = 635.0
+offset_bottom = 304.0
+texture_normal = ExtResource("3_2joxv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(144, 164)
+offset_left = 634.0
+offset_top = 126.0
+offset_right = 791.0
+offset_bottom = 311.0
+texture_normal = ExtResource("4_rooax")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(144, 164)
+offset_left = 477.0
+offset_top = 329.0
+offset_right = 640.0
+offset_bottom = 498.0
+texture_normal = ExtResource("5_hbncq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton5" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(161, 164)
+offset_left = 300.0
+offset_top = 328.0
+offset_right = 488.0
+offset_bottom = 503.0
+texture_normal = ExtResource("6_gssk6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="back-arrow" type="TextureButton" parent="."]
+offset_left = 70.0
+offset_top = 40.0
+offset_right = 155.0
+offset_bottom = 116.0
+texture_normal = ExtResource("9_86v25")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton6" type="TextureButton" parent="."]
+offset_left = 487.0
+offset_top = 519.0
+offset_right = 605.0
+offset_bottom = 589.0
+texture_normal = ExtResource("10_hl8tl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 705.0
+offset_top = 533.0
+offset_right = 951.0
+offset_bottom = 560.0
+
+[node name="Label" type="Label" parent="ProgressBar"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 186.0
+offset_bottom = 47.0
+text = "Report Downloading"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.167
+one_shot = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+position = Vector2i(234, 57)
+size = Vector2i(745, 500)
+dialog_hide_on_ok = true
+access = 2
+filters = PackedStringArray("*.csv")
+
+[node name="TextureButton7" type="TextureButton" parent="."]
+offset_left = 651.0
+offset_top = 335.0
+offset_right = 821.0
+offset_bottom = 489.0
+texture_normal = ExtResource("11_e132t")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 903.0
+offset_top = 522.0
+offset_right = 1149.0
+offset_bottom = 584.0
+theme_override_colors/font_color = Color(0.741176, 0.533333, 0.964706, 1)
+theme_override_fonts/font = ExtResource("3_vlxne")
+theme_override_font_sizes/font_size = 32
+text = "Exit game"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_quiz_performance_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_grocery_purchased_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_cooking_performance_pressed"]
+[connection signal="pressed" from="TextureButton4" to="." method="_on_leftover_pressed"]
+[connection signal="pressed" from="TextureButton5" to="." method="_on_food_cons_pressed"]
+[connection signal="pressed" from="back-arrow" to="." method="_on_backarrow_pressed"]
+[connection signal="pressed" from="TextureButton6" to="." method="prompt_save_file"]
+[connection signal="timeout" from="Timer" to="." method="_on_updateTimer_timeout"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="TextureButton7" to="." method="_on_quicktips_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

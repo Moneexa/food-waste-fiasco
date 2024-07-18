@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://bff8wrf3sojwn"]
+
+[ext_resource type="Texture2D" uid="uid://40p6gl6xf6jq" path="res://thesisProjectAssets/background.jpg" id="1_4abrs"]
+[ext_resource type="Script" path="res://prentsScene/tips.gd" id="1_8ojpk"]
+[ext_resource type="FontFile" uid="uid://dpkqwlvqf0myv" path="res://fonts/ShadowsIntoLight-Regular.ttf" id="2_xbadk"]
+[ext_resource type="Texture2D" uid="uid://cmxorjccfdrlg" path="res://thesisProjectAssets/parentsAssets/backIcon.PNG" id="3_kw6ty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pds7m"]
+bg_color = Color(0.52549, 0.6, 0.760784, 1)
+
+[node name="Node" type="Node"]
+script = ExtResource("1_8ojpk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.384314)
+offset_right = 1154.0
+offset_bottom = 650.0
+texture = ExtResource("1_4abrs")
+expand_mode = 1
+
+[node name="ItemList" type="ItemList" parent="."]
+texture_filter = 1
+offset_left = 57.0
+offset_top = 165.0
+offset_right = 1122.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.423529, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.882353, 0.862745, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_xbadk")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/panel = SubResource("StyleBoxFlat_pds7m")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 285.0
+offset_top = 35.0
+offset_right = 888.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0.392157, 0.0862745, 0.207843, 1)
+theme_override_colors/font_shadow_color = Color(0.262745, 0.0352941, 0.431373, 1)
+theme_override_colors/font_outline_color = Color(1, 0.85098, 0.823529, 1)
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("2_xbadk")
+theme_override_font_sizes/font_size = 26
+text = "Some useful tips for your child to educate them about food waste"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 79.0
+offset_top = 19.0
+offset_right = 164.0
+offset_bottom = 103.0
+texture_normal = ExtResource("3_kw6ty")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
